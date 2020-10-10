@@ -59,7 +59,7 @@ D | Printer D | 30 | `10.30.0.33` | `10.30.0.254`
 ## Détails
 
 ### Ajouts
-Comme demandé dans l'énnoncé, nous avons ajouté un datacenter dans chaques bâtiments (B, C, D) ainsi que des imprimantes et une passerelle internet.
+Comme demandé dans l'énnoncé, nous avons ajouté un datacenter dans chaque bâtiment (B, C, D) ainsi que des imprimantes et une passerelle internet.
 
 Pour le nouveau bâtiment (D), nous avons pris la décision de mettre 2 fois 25 téléphones reliés aux PC (50 en tout), un Datacenter et une imprimante comme dit précèdemment ainsi qu'un routeur pour faire la liaison par Internet avec le reste de l'infra.
 
@@ -67,11 +67,11 @@ Le spanning tree a été mis en place sur les switchs 1.
 
 ### Vlan
 
-Nous avons décider de créer 3 Vlan différents:
+Nous avons décidé de créer 3 Vlan différents:
 
 Les datacenter pour qu'ils puissent communiquer entre eux.
 
-Les Pc pour la même raison, nous aurions pu les mettres dans des Vlan celon les bâtiments mais nous avons préféré centralisé notre archi.
+Les Pc pour la même raison, nous aurions pu les mettre dans des Vlan selon les bâtiments mais nous avons préféré centraliser notre archi.
 
 Les imprimantes dans un Vlan à part pour des questions de sécurité.
 
