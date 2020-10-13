@@ -66,7 +66,7 @@
 ## `Détails`
 
 ### `Ajouts`
-Comme demandé dans l'énnoncé, nous avons ajouté un datacenter dans chaque bâtiment (B, C, D) ainsi que des imprimantes et une passerelle internet.
+Comme demandé dans l'énnoncé, nous avons ajouté un datacenter dans chaque bâtiment (B, C, D) ainsi que des imprimantes et une passerelle internet pour le bâtiment D.
 
 Pour le nouveau bâtiment (D), nous avons pris la décision de mettre 2 fois 25 téléphones reliés aux PC (50 en tout), un Datacenter et une imprimante comme dit précèdemment ainsi qu'un routeur pour faire la liaison par Internet avec le reste de l'infra.
 
@@ -81,8 +81,18 @@ Les Pc pour la même raison, nous aurions pu les mettre dans des Vlan selon les 
 Les imprimantes dans un Vlan à part pour des questions de sécurité.
 
 ### `Spanning Tree`
+Activer le mode rapid STP sur tous les switch
+Switch A en mode Root Primary -> fa0/1 et fa0/2 en priorité
+Switch C en mode root Secondary
+Lien coupé entre Switch B et C
+Switch A-B-C-D haute priorité
+Switch 2B-2C basse priorité
+Activer le Portfast sur les fa en lien avc les pc, imprimantes, telepones et serveur
+Mise en place des BPDU Filter sur les meme ports qu'au dessus
 
 ### `LACP LAG`
+Doubler les cables fibres entre les bat A-B-C avc du LACP
+Doubler les cables dans les batiments avc du LACP ou LAG (a voir entre nous)
 
 ## `Commandes`
 
@@ -240,8 +250,19 @@ ex
 ## `A faire`
 
 mise en place d'une salle (B bis) avc 96 users
+
 spanning tree 
+
 Lacp, Lag
+
 Vlan telephone
+
 Mise en place de serveur d'impression dns un nouveau Vlan
+
 Mise en place de firewall au niveau du routeur
+
+Mise en place des BPDU Guard et filter
+
+Mettre a jour le sommaire et capture d'écran de l'archi globale et du bat B
+
+Passer le routeur en Switch de Niveau 3
