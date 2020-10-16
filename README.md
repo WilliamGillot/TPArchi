@@ -122,6 +122,8 @@ Switch 2B-2C basse priorité.
 
 Switch Bbis haute priorité.
 
+Lien coupé entre Switch BBis et Bbis2.
+
 Activer le Portfast sur les fa en lien avec les pc, imprimantes, téléphones et serveurs.
 
 Mise en place des BPDU Filter sur les mêmes ports qu'au dessus (les terminaux).
