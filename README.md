@@ -4,9 +4,7 @@
 
 ## `Sommaire`
 
-- [`Documentation TP2`](#documentation-tp2)
-    - [William Gillot - Louis Maury](#william-gillot---louis-maury)
-  - [`Sommaire`](#sommaire)
+- [`Sommaire`](#sommaire)
   - [`Dépôt Git`](#dépôt-git)
   - [`Architecture Globale`](#architecture-globale)
     - [`Bâtiment A`](#bâtiment-a)
