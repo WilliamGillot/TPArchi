@@ -11,6 +11,7 @@
   - [`Architecture Globale`](#architecture-globale)
     - [`Bâtiment A`](#bâtiment-a)
     - [`Bâtiment B`](#bâtiment-b)
+    - [`Bâtiment B-Bis`](#bâtiment-b-bis)
     - [`Bâtiment C`](#bâtiment-c)
     - [`Bâtiment D`](#bâtiment-d)
   - [`Détails`](#détails)
@@ -28,7 +29,6 @@
       - [`Agregation de liens Liste Commande`](#agregation-de-liens-liste-commande)
     - [`Routeur`](#routeur)
       - [`Routage Inter-Vlan`](#routage-inter-vlan)
-  - [`A faire`](#a-faire)
 
 ## `Dépôt Git`
 [Lien de notre dépôt git](https://git)
@@ -36,26 +36,45 @@
 ## `Architecture Globale`
 ![Archi Globale](archiglobale.png)
 
-| Batiment | Equipement   | VLAN | IP           | Gateway       |
-| -------- | ------------ | ---- | ------------ | ------------- |
-| A        | Datacenter A | 10   | `10.10.0.10` | `10.10.0.254` |
-| B        | Datacenter B | 10   | `10.10.0.11` | `10.10.0.254` |
-| B        | PC1 B        | 20   | `10.20.0.21` | `10.20.0.254` |
-| B        | PC2 B        | 20   | `10.20.0.22` | `10.20.0.254` |
-| B        | Printer B    | 30   | `10.30.0.31` | `10.30.0.254` |
-| C        | Datacenter C | 10   | `10.10.0.12` | `10.10.0.254` |
-| C        | PC C         | 20   | `10.20.0.23` | `10.20.0.254` |
-| C        | Printer C    | 30   | `10.30.0.32` | `10.30.0.254` |
-| D        | Datacenter D | 10   | `10.10.0.13` | `10.10.0.254` |
-| D        | PC 1 D       | 20   | `10.20.0.33` | `10.20.0.254` |
-| D        | PC 2 D       | 20   | `10.20.0.34` | `10.20.0.254` |
-| D        | Printer D    | 30   | `10.30.0.33` | `10.30.0.254` |
+| Batiment | Equipement       | VLAN | IP           | Gateway       |
+| -------- | ---------------- | ---- | ------------ | ------------- |
+| A        | Datacenter A     | 10   | `10.10.0.10` | `10.10.0.254` |
+| A        | Server-Printer A | 40   | `10.40.0.10` | `10.40.0.254` |
+| B        | Datacenter B     | 10   | `10.10.0.20` | `10.10.0.254` |
+| B        | PC1 B            | 20   | `10.20.0.20` | `10.20.0.254` |
+| B        | PC2 B            | 20   | `10.20.0.21` | `10.20.0.254` |
+| B        | Phone1 B         | 50   | `10.50.0.20` | `10.50.0.254` |
+| B        | Phone2 B         | 50   | `10.50.0.21` | `10.50.0.254` |
+| B        | Printer B        | 30   | `10.30.0.20` | `10.30.0.254` |
+| B-Bis    | Datacenter B-BIS | 10   | `10.10.0.50` | `10.10.0.254` |
+| B-Bis    | PC1 B-Bis        | 20   | `10.20.0.50` | `10.20.0.254` |
+| B-Bis    | PC2 B-Bis        | 20   | `10.20.0.51` | `10.20.0.254` |
+| B-Bis    | PC3 B-Bis        | 20   | `10.20.0.52` | `10.20.0.254` |
+| B-Bis    | PC4 B-Bis        | 20   | `10.20.0.53` | `10.20.0.254` |
+| B-Bis    | Phone1 B-Bis     | 50   | `10.50.0.50` | `10.50.0.254` |
+| B-Bis    | Phone2 B-Bis     | 50   | `10.50.0.51` | `10.50.0.254` |
+| B-Bis    | Phone3 B-Bis     | 50   | `10.50.0.52` | `10.50.0.254` |
+| B-Bis    | Phone4 B-Bis     | 50   | `10.50.0.53` | `10.50.0.254` |
+| B-Bis    | Printer B-Bis    | 30   | `10.31.0.50` | `10.30.0.254` |
+| C        | Datacenter C     | 10   | `10.10.0.30` | `10.10.0.254` |
+| C        | PC C             | 20   | `10.20.0.30` | `10.20.0.254` |
+| C        | Phone C          | 50   | `10.50.0.30` | `10.50.0.254` |
+| C        | Printer C        | 30   | `10.30.0.30` | `10.30.0.254` |
+| D        | Datacenter D     | 10   | `10.10.0.40` | `10.10.0.254` |
+| D        | PC1  D           | 20   | `10.20.0.40` | `10.20.0.254` |
+| D        | PC2  D           | 20   | `10.20.0.41` | `10.20.0.254` |
+| D        | Phone1  D        | 50   | `10.50.0.40` | `10.20.0.254` |
+| D        | Phone2  D        | 50   | `10.50.0.41` | `10.20.0.254` |
+| D        | Printer D        | 30   | `10.30.0.40` | `10.30.0.254` |
 
 ### `Bâtiment A`
 ![Archi Bat A](batA.png)
 
 ### `Bâtiment B`
 ![Archi Bat B](batB.png)
+
+### `Bâtiment B-Bis`
+![Archi Bat BBis](batBBis.png)
 
 ### `Bâtiment C`
 ![Archi Bat C](batC.png)
@@ -66,33 +85,56 @@
 ## `Détails`
 
 ### `Ajouts`
-Comme demandé dans l'énnoncé, nous avons ajouté un datacenter dans chaque bâtiment (B, C, D) ainsi que des imprimantes et une passerelle internet pour le bâtiment D.
+
+Comme demandé dans l'énnoncé, nous avons ajouté un datacenter dans chaque bâtiment et une imprimante ainsi qu'un serveur d'impression dans le bâtiment A pour la gestion de priorité.
+
+Il faudra également mettre en place un Firewall au niveau de routeur (BAT A) afin de gérer nos différents Vlan.
 
 Pour le nouveau bâtiment (D), nous avons pris la décision de mettre 2 fois 25 téléphones reliés aux PC (50 en tout), un Datacenter et une imprimante comme dit précèdemment ainsi qu'un routeur pour faire la liaison par Internet avec le reste de l'infra.
 
+Pour la nouvelle extension du bâtiment B (B-Bis) nous avons mis en place 2 fois 48 téléphones reliés aux PC (96 en tout) ainsi qu'une imprimante et un datacenter comme pour les autres bâtiments. Nous avons également décider de mettre en place une redondance au niveau des Switchs de cette nouvelle extension en mettant en place un spanning tree. 
+
 ### `Vlan`
 
-Nous avons décidé de créer 3 Vlan différents:
+Nous avons décidé de créer 5 Vlan différents:
 
 Les datacenter pour qu'ils puissent communiquer entre eux.
 
 Les Pc pour la même raison, nous aurions pu les mettre dans des Vlan selon les bâtiments mais nous avons préféré centraliser notre archi.
 
-Les imprimantes dans un Vlan à part pour des questions de sécurité.
+Un Vlan pour les imprimantes.
+
+Un Vlan pour le serveur Impression.
+
+Un dernier Vlan pour les téléphones afin de finir de compartimenter notre archi.
 
 ### `Spanning Tree`
-Activer le mode rapid STP sur tous les switch
-Switch A en mode Root Primary -> fa0/1 et fa0/2 en priorité
-Switch C en mode root Secondary
-Lien coupé entre Switch B et C
-Switch A-B-C-D haute priorité
-Switch 2B-2C basse priorité
-Activer le Portfast sur les fa en lien avc les pc, imprimantes, telepones et serveur
-Mise en place des BPDU Filter sur les meme ports qu'au dessus
+
+Activer le mode rapid STP sur tous les switch.
+
+Switch A en mode Root Primary -> fa0/1 et fa0/2 en priorité.
+
+Switch B en mode root Secondary.
+
+Lien coupé entre Switch B et C.
+
+Switch A-B-C-D haute priorité.
+
+Switch 2B-2C basse priorité.
+
+Switch Bbis haute priorité.
+
+Activer le Portfast sur les fa en lien avec les pc, imprimantes, telepones et serveur.
+
+Mise en place des BPDU Filter sur les même ports qu'au dessus (les terminaux).
 
 ### `LACP LAG`
-Doubler les cables fibres entre les bat A-B-C avc du LACP
-Doubler les cables dans les batiments avc du LACP ou LAG (a voir entre nous)
+
+Doubler les cables fibres entre les bat A-B-C avec du LACP.
+
+Mise en place de quatres câbles entre le switch 1B et 1Bbis en LACP.
+
+Doubler les cables dans les batiments au niveau des switchs et des serveurs avec du LAG.
 
 ## `Commandes`
 
@@ -111,6 +153,11 @@ ex
 vlan 30
 name vlan_printer
 ex
+vlan 40
+name vlan_server_printer
+ex
+vlan 50
+name vlan_phone
 
 interface vlan 10
 ip address 10.10.0.1 255.255.255.0
@@ -127,6 +174,16 @@ ip address 10.30.0.1 255.255.255.0
 no shut
 ex
 ip default-gateway 10.30.0.254
+interface vlan 40
+ip address 10.40.0.1 255.255.255.0
+no shut
+ex
+ip default-gateway 10.40.0.254
+interface vlan 50
+ip address 10.50.0.1 255.255.255.0
+no shut
+ex
+ip default-gateway 10.50.0.254
 ```
 
 #### `Trunk Exemple`
@@ -246,23 +303,3 @@ interface gigabitEthernet 0/1
 no shutdown
 ex
 ```
- 
-## `A faire`
-
-mise en place d'une salle (B bis) avc 96 users
-
-spanning tree 
-
-Lacp, Lag
-
-Vlan telephone
-
-Mise en place de serveur d'impression dns un nouveau Vlan
-
-Mise en place de firewall au niveau du routeur
-
-Mise en place des BPDU Guard et filter
-
-Mettre a jour le sommaire et capture d'écran de l'archi globale et du bat B
-
-Passer le routeur en Switch de Niveau 3
