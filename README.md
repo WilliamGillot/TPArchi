@@ -90,7 +90,7 @@ Il faudra également mettre en place un Firewall au niveau de routeur (BAT A) af
 
 Pour le nouveau bâtiment (D), nous avons pris la décision de mettre 2 fois 25 téléphones reliés aux PC (50 en tout), un Datacenter et une imprimante comme dit précèdemment ainsi qu'un routeur pour faire la liaison par Internet avec le reste de l'infra.
 
-Pour la nouvelle extension du bâtiment B (B-Bis) nous avons mis en place 2 fois 48 téléphones reliés aux PC (96 en tout) ainsi qu'une imprimante et un datacenter comme pour les autres bâtiments. Nous avons également décider de mettre en place une redondance au niveau des Switchs de cette nouvelle extension en mettant en place un spanning tree. 
+Pour la nouvelle extension du bâtiment B (B-Bis) nous avons mis en place 2 fois 48 téléphones reliés aux PC (96 en tout) ainsi qu'une imprimante et un datacenter comme pour les autres bâtiments. Nous avons également décidé de mettre en place une redondance au niveau des Switchs de cette nouvelle extension en mettant en place un spanning tree. 
 
 ### `Vlan`
 
@@ -122,9 +122,9 @@ Switch 2B-2C basse priorité.
 
 Switch Bbis haute priorité.
 
-Activer le Portfast sur les fa en lien avec les pc, imprimantes, telepones et serveur.
+Activer le Portfast sur les fa en lien avec les pc, imprimantes, téléphones et serveurs.
 
-Mise en place des BPDU Filter sur les même ports qu'au dessus (les terminaux).
+Mise en place des BPDU Filter sur les mêmes ports qu'au dessus (les terminaux).
 
 ### `LACP LAG`
 
